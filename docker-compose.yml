@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: galaw_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: galaw_user
+      POSTGRES_PASSWORD: galaw_pass
+      POSTGRES_DB: galaw_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - galaw_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  galaw_postgres_data:
